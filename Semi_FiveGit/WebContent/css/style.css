@@ -1,0 +1,65 @@
+* {
+	box-sizing: border-box
+}
+
+body {
+	font-family: "Lato", sans-serif;
+}
+
+header {
+	text-align: center
+}
+
+aside {
+	float: left;
+	border: 1px solid #ccc;
+	background-color: #f1f1f1;
+	width: 25%;
+	height: 300px;
+}
+
+aside a {
+	display: block;
+	color: black;
+	padding: 22px 16px;
+	width: 100%;
+	text-align: left;
+	cursor: pointer;
+	font-size: 17px;
+	text-decoration: none;
+}
+
+aside a:hover {
+	background-color: #ddd;
+}
+
+section {
+	float: left;
+	padding: 20px 12px;
+	border: 1px solid #ccc;
+	width: 75%;
+	border-left: none; /* aside와의 경계선에 두 줄이 생겨 왼쪽선 없애요*/
+	height: 300px;
+}
+
+#top {
+	text-align: right;
+	padding-right: 1em;
+	background-color: #ddd;
+	height: 3em;
+	line-height: 3em;
+}
+
+#top a {
+	text-decoration: none;
+	margin-left: 20px;
+}
+
+a:hover {
+	font-weight: bold
+}
+
+footer {
+	clear: both;
+	text-align: center;
+}
