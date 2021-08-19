@@ -42,6 +42,9 @@ public class FreeBoardFrontController extends javax.servlet.http.HttpServlet {
 			case "/BoardList.freebo":
 				action = new BoardListAction();
 				break;
+			case "/BoardList2.freebo":
+				action = new BoardListAction2();
+				break;	
 			case "/BoardWrite.freebo":
 				action = new BoardWriteAction();
 				break;
@@ -50,12 +53,6 @@ public class FreeBoardFrontController extends javax.servlet.http.HttpServlet {
 				break;
 			case "/BoardDetailAction.freebo":
 				action = new BoardDetailAction();
-				break;
-			case "/BoardReplyView.freebo":
-				action = new BoardReplyView();
-				break;
-			case "/BoardReplyAction.freebo":
-				action = new BoardReplyAction();
 				break;
 			case "/BoardModifyView.freebo":
 				action = new BoardModifyView();

@@ -33,6 +33,6 @@ CREATE TABLE FREE_BOARD(
 );
 
 drop table FREE_BOARD;
-
+delete from free_board where FREE_BOARD_IDX= 5;
 select * from free_board;
 

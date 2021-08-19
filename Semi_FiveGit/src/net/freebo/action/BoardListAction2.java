@@ -12,12 +12,11 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
-import net.freebo.action.ActionForward;
 import net.freebo.db.FreeBoardBean;
 import net.freebo.db.FreeBoardDAO;
 
 
-public class BoardListAction implements Action {
+public class BoardListAction2 implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
@@ -39,11 +38,14 @@ public class BoardListAction implements Action {
 		
 		
 		
+		int type = Integer.parseInt(request.getParameter("type"));
+		
+		System.out.println("넘어온 type = " + type);
 		//총 리스트 수를 받아옵니다.
-		int listcount = boarddao.getListCount();
+		int listcount = boarddao.getListCount(type);
 		
 		// 리스트를 받아옵니다.
-		boardlist = boarddao.getBoardList(page, limit);
+		boardlist = boarddao.getBoardList2(page, limit, type);
 		
 		/*
 		 *  총 페이지 수
@@ -116,7 +118,7 @@ public class BoardListAction implements Action {
 			
 			//위에서 request로 담았던 것을 JsonObject에 담습니다.
 			JsonObject object = new JsonObject();
-			object.addProperty("page", page);//{"page": 변수 page의 값} 형식으로 저장
+			object.addProperty("page", page);//{"page": 변수 apge의 값} 형식으로 저장
 			object.addProperty("maxpage", maxpage);
 			object.addProperty("startpage", startpage);
 			object.addProperty("endpage", endpage);

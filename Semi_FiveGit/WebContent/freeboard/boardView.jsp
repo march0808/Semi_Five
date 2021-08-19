@@ -4,7 +4,9 @@
 <head>
 <title>MVC 게시판 - view</title>
 <jsp:include page="header.jsp" />
+<%-- 
 <script src="js/view.js"></script>
+--%>
 <link rel="stylesheet" href="css/view.css">
 </head>
 <body>
@@ -42,24 +44,22 @@
  		
  	<tr>
  		<td colspan="2" class="center">
- 			<a href="BoardReplyView.freebo?num=${boarddata.free_board_idx}">
- 				<button class="btn btn-primary">답변</button>
- 			</a>
  			
- 			
+ 			<c:if test="${boarddata.mem_nickname == mem_nickname || mem_id == 'admin' }">
  			<a href="BoardModifyView.freebo?num=${boarddata.free_board_idx}">
  				<button class="btn btn-info">수정</button>
  			</a>
  			<%-- href의 주소를 #으로 설정합니다. --%>
+ 			
  			<a href="#">
  				<button class="btn btn-danger" data-toggle="modal"
  						data-target="#myModal">삭제</button>
  			</a>
- 			
- 			
+ 			</c:if>
  			<a href="BoardList.freebo">
  				<button class="btn btn-secondary">목록</button>
  			</a>
+ 			
  			</td>
  		</tr>
  	</table>
@@ -80,12 +80,9 @@
 		  	 	 <input type="hidden" name="num" value="${param.num}"
 		  	 	 	  id="comment_board_num">
 		  	 	 <div class="form-group">
-		  	 	 	<label for="pwd">비밀번호</label>
-		  	 	 	<input  type="password"
-		  	 	 			class="form-control" placeholder="Enter password"
-		  	 	 			name="board_pass" id="board_pass">
-		  	 	 	</div>
-		  	 	 	<button type="submit" class="btn btn-primary">전송</button>
+		  	 	 	<label for="pwd">정말로 삭제하시겠습니까?</label>
+		  	 	 </div>	
+		  	 	 	<button type="submit" class="btn btn-primary">삭제</button>
 		  	 	 	<button type="button" class="btn btn-danger" data-dismiss="modal">취소</button>
 		  		 </form>
 		  		</div><!-- class="modal-body" -->

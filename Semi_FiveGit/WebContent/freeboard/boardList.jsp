@@ -34,15 +34,18 @@
   		<option value="7">7</option>
   		<option value="10" selected>10</option>
   	</select>
-  </div>
-    <div class="rows">
-  	<span>게시판 선택</span>
-  	<select class="form-control" id="free_board_type">
-  		<option value="1">자유</option>
-  		<option value="2">정보공유</option>
-  		<option value="3">유머</option>
-  	</select>
-  </div>
+ </div>
+ <form action="BoardList2.freebo">
+ 	<span>게시판 선택</span>
+ 	<button id ="alltype" name="alltype" >전체</button>
+ 	
+ 	<input type="hidden" name="type" id="type" value="1">
+ 	
+	<button id ="boardtype1" name="boardtype1" value="1" >자유</button>
+  	<button id ="boardtype2" name="boardtype2" value="2" >정보공유</button>
+  	<button id ="boardtype3" name="boardtype3" value="3" >유머</button>
+  </form>
+
   <table class="table table-striped">
    <thead>
 	<tr>
@@ -135,7 +138,7 @@
 	<font size=5>등록된 글이 없습니다.</font>
 </c:if>
 
-<button type="button" class="btn btn-info float-right">글 쓰 기</button>
+<button type="button" id="write" class="btn btn-info float-right">글 쓰 기</button>
 </div>
 </body>
 </html>
